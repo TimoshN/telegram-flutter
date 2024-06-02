@@ -434,13 +434,13 @@ class MessageTileMapper {
           type: notImplementedText,
         );
       },
-      messageWebsiteConnected: (td.MessageWebsiteConnected value) {
-        return MessageWebsiteConnectedTileModel(
-          id: message.id,
-          isOutgoing: message.isOutgoing,
-          type: notImplementedText,
-        );
-      },
+      // messageWebsiteConnected: (td.MessageWebsiteConnected value) {
+      //   return MessageWebsiteConnectedTileModel(
+      //     id: message.id,
+      //     isOutgoing: message.isOutgoing,
+      //     type: notImplementedText,
+      //   );
+      // },
       messageVideoChatStarted: (td.MessageVideoChatStarted value) {
         return MessageVideoChatStartedTileModel(
           id: message.id,
@@ -566,7 +566,7 @@ class MessageTileMapper {
           type: notImplementedText,
         );
       },
-      messageUserShared: (td.MessageUserShared value) {
+      messageUsersShared: (td.MessageUsersShared value) {
         return MessageForumTopicIsHiddenTileModel(
           id: message.id,
           isOutgoing: message.isOutgoing,
@@ -581,6 +581,78 @@ class MessageTileMapper {
         );
       },
       messageBotWriteAccessAllowed: (td.MessageBotWriteAccessAllowed value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      // UNIMPLEMENTED
+      messageExpiredVideoNote: (td.MessageExpiredVideoNote value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      messageExpiredVoiceNote: (td.MessageExpiredVoiceNote value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      messageStory: (td.MessageStory value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      messageChatSetBackground: (td.MessageChatSetBackground value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      messageChatBoost: (td.MessageChatBoost value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      messagePremiumGiftCode: (td.MessagePremiumGiftCode value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      messagePremiumGiveawayCreated: (td.MessagePremiumGiveawayCreated value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      messagePremiumGiveaway: (td.MessagePremiumGiveaway value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      messagePremiumGiveawayCompleted:
+          (td.MessagePremiumGiveawayCompleted value) {
+        return MessageForumTopicIsHiddenTileModel(
+          id: message.id,
+          isOutgoing: message.isOutgoing,
+          type: notImplementedText,
+        );
+      },
+      messagePremiumGiveawayWinners: (td.MessagePremiumGiveawayWinners value) {
         return MessageForumTopicIsHiddenTileModel(
           id: message.id,
           isOutgoing: message.isOutgoing,

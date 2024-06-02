@@ -114,54 +114,54 @@ class ContentInteractor {
         <Future<Tuple2<SharedContentType, int>>>[
       _messageRepository
           .getMessagesCount(
-            chatId: _args.id,
-            filter: const td.SearchMessagesFilterPhotoAndVideo(),
-          )
+              chatId: _args.id,
+              filter: const td.SearchMessagesFilterPhotoAndVideo(),
+              savedMessagesTopicId: 0)
           .then(
             (int value) =>
                 Tuple2<SharedContentType, int>(SharedContentType.media, value),
           ),
       _messageRepository
           .getMessagesCount(
-            chatId: _args.id,
-            filter: const td.SearchMessagesFilterDocument(),
-          )
+              chatId: _args.id,
+              filter: const td.SearchMessagesFilterDocument(),
+              savedMessagesTopicId: 0)
           .then(
             (int value) =>
                 Tuple2<SharedContentType, int>(SharedContentType.files, value),
           ),
       _messageRepository
           .getMessagesCount(
-            chatId: _args.id,
-            filter: const td.SearchMessagesFilterUrl(),
-          )
+              chatId: _args.id,
+              filter: const td.SearchMessagesFilterUrl(),
+              savedMessagesTopicId: 0)
           .then(
             (int value) =>
                 Tuple2<SharedContentType, int>(SharedContentType.links, value),
           ),
       _messageRepository
           .getMessagesCount(
-            chatId: _args.id,
-            filter: const td.SearchMessagesFilterAudio(),
-          )
+              chatId: _args.id,
+              filter: const td.SearchMessagesFilterAudio(),
+              savedMessagesTopicId: 0)
           .then(
             (int value) =>
                 Tuple2<SharedContentType, int>(SharedContentType.music, value),
           ),
       _messageRepository
           .getMessagesCount(
-            chatId: _args.id,
-            filter: const td.SearchMessagesFilterVoiceNote(),
-          )
+              chatId: _args.id,
+              filter: const td.SearchMessagesFilterVoiceNote(),
+              savedMessagesTopicId: 0)
           .then(
             (int value) =>
                 Tuple2<SharedContentType, int>(SharedContentType.voice, value),
           ),
       _messageRepository
           .getMessagesCount(
-            chatId: _args.id,
-            filter: const td.SearchMessagesFilterAnimation(),
-          )
+              chatId: _args.id,
+              filter: const td.SearchMessagesFilterAnimation(),
+              savedMessagesTopicId: 0)
           .then(
             (int value) =>
                 Tuple2<SharedContentType, int>(SharedContentType.gif, value),

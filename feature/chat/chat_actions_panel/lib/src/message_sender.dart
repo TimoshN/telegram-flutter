@@ -20,11 +20,11 @@ class MessageSender implements IMessageSender {
     return _functionExecutor.send<td.Message>(
       td.SendMessage(
         chatId: chatId,
-        replyToMessageId: 0,
+        // replyTo: 0,
         messageThreadId: 0,
         inputMessageContent: td.InputMessageText(
           clearDraft: true,
-          disableWebPagePreview: false,
+          // disableWebPagePreview: false,
           text: td.FormattedText(text: text, entities: const <td.TextEntity>[]),
         ),
       ),

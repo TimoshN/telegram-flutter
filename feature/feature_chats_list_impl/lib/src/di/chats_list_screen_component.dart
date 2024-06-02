@@ -38,7 +38,7 @@ abstract class ChatsListScreenModule {
           main: (_) => const td.ChatListMain(),
           archive: (_) => const td.ChatListArchive(),
           filter: (ChatListFilter filter) {
-            return td.ChatListFilter(chatFilterId: filter.chatFilterId);
+            return td.ChatListFolder(chatFolderId: filter.chatFilterId);
           },
         ),
       );

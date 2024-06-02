@@ -11,8 +11,8 @@ class FoldersInteractor with SubscriptionMixin {
     subscribe<List<Folder>>(
       _chatFilterRepository.chatFiltersStream
           .map(
-            (List<td.ChatFilterInfo> event) =>
-                event.map((td.ChatFilterInfo info) {
+            (List<td.ChatFolderInfo> event) =>
+                event.map((td.ChatFolderInfo info) {
               return Folder.id(id: info.id, title: info.title);
             }).toList(growable: false),
           )

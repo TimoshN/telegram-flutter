@@ -48,14 +48,14 @@ class ChatMessageRepositoryImpl implements IChatMessageRepository {
       );
 
   @override
-  Future<int> getMessagesCount({
-    required int chatId,
-    required td.SearchMessagesFilter filter,
-  }) =>
+  Future<int> getMessagesCount(
+          {required int chatId,
+          required td.SearchMessagesFilter filter,
+          required int savedMessagesTopicId}) =>
       _dataSource.getMessagesCount(
-        chatId: chatId,
-        filter: filter,
-      );
+          chatId: chatId,
+          filter: filter,
+          savedMessagesTopicId: savedMessagesTopicId);
 
   @override
   Future<void> deleteMessages({

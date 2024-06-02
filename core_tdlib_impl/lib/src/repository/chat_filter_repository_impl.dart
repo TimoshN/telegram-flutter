@@ -12,7 +12,7 @@ class ChatFilterRepositoryImpl implements IChatFilterRepository {
   final ChatFilterDataSource _dataSource;
 
   @override
-  Stream<List<td.ChatFilterInfo>> get chatFiltersStream =>
+  Stream<List<td.ChatFolderInfo>> get chatFiltersStream =>
       _dataSource.chatFiltersStream;
 
   void dispose() {

@@ -10,7 +10,7 @@ class BackgroundDataSource {
   final ITdFunctionExecutor _functionExecutor;
 
   Future<List<td.Background>> get backgrounds => _functionExecutor
-      .send<td.Backgrounds>(const td.GetBackgrounds(forDarkTheme: false))
+      .send<td.Backgrounds>(const td.GetInstalledBackgrounds(forDarkTheme: false))
       .then((td.Backgrounds value) => value.backgrounds);
 
   Future<td.Background> getBackground(int id) async {

@@ -26,7 +26,7 @@ class UpdatesProvider
       _client.events.connectionStateUpdatesFilter();
 
   @override
-  Stream<td.UpdateChatFilters> get chatFiltersUpdates =>
+  Stream<td.UpdateChatFolders> get chatFiltersUpdates =>
       _client.events.chatFiltersUpdatesFilter();
 
   @override
@@ -56,9 +56,9 @@ class UpdatesProvider
 }
 
 extension _UpdatesExtensions on Stream<td.TdObject> {
-  Stream<td.UpdateChatFilters> chatFiltersUpdatesFilter() =>
-      where((td.TdObject event) => event is td.UpdateChatFilters)
-          .cast<td.UpdateChatFilters>();
+  Stream<td.UpdateChatFolders> chatFiltersUpdatesFilter() =>
+      where((td.TdObject event) => event is td.UpdateChatFolders)
+          .cast<td.UpdateChatFolders>();
 
   Stream<td.UpdateConnectionState> connectionStateUpdatesFilter() =>
       where((td.TdObject event) => event is td.UpdateConnectionState)
@@ -94,7 +94,7 @@ extension _UpdatesExtensions on Stream<td.TdObject> {
             event is td.UpdateChatLastMessage ||
             event is td.UpdateChatPosition ||
             event is td.UpdateChatIsMarkedAsUnread ||
-            event is td.UpdateChatIsBlocked ||
+            // event is td.UpdateChatIsBlocked ||
             event is td.UpdateChatHasScheduledMessages ||
             event is td.UpdateChatDefaultDisableNotification ||
             event is td.UpdateChatReadInbox ||
@@ -105,7 +105,7 @@ extension _UpdatesExtensions on Stream<td.TdObject> {
             event is td.UpdateChatActionBar ||
             event is td.UpdateChatReplyMarkup ||
             event is td.UpdateChatDraftMessage ||
-            event is td.UpdateChatFilters ||
+            event is td.UpdateChatFolders ||
             event is td.UpdateChatOnlineMemberCount,
       ).cast<td.Update>();
 

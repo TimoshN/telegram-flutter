@@ -43,10 +43,10 @@ class FakeChatMessageRepository implements IChatMessageRepository {
   }
 
   @override
-  Future<int> getMessagesCount({
-    required int chatId,
-    required td.SearchMessagesFilter filter,
-  }) async {
+  Future<int> getMessagesCount(
+      {required int chatId,
+      required td.SearchMessagesFilter filter,
+      required int savedMessagesTopicId}) async {
     return 1;
   }
 

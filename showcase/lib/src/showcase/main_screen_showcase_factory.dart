@@ -26,22 +26,31 @@ class MainScreenShowcaseFactory {
     final MainScreenFeatureDependencies dependencies =
         MainScreenFeatureDependencies(
       chatFilterRepository: FakeChatFilterRepository(
-        chatFilters: Stream<List<td.ChatFilterInfo>>.value(
-          <td.ChatFilterInfo>[
-            const td.ChatFilterInfo(
+        chatFilters: Stream<List<td.ChatFolderInfo>>.value(
+          <td.ChatFolderInfo>[
+            const td.ChatFolderInfo(
               id: 1,
+              colorId: 0,
+              isShareable: false,
               title: 'test',
-              iconName: 'All',
+              hasMyInviteLinks: false,
+              icon: td.ChatFolderIcon(name: "All"),
             ),
-            const td.ChatFilterInfo(
+            const td.ChatFolderInfo(
               id: 2,
+              colorId: 1,
+              isShareable: true,
               title: 'test2',
-              iconName: 'All',
+              hasMyInviteLinks: false,
+              icon: td.ChatFolderIcon(name: "All"),
             ),
-            const td.ChatFilterInfo(
+            const td.ChatFolderInfo(
               id: 3,
+              colorId: 2,
+              isShareable: false,
               title: 'test3',
-              iconName: 'All',
+              hasMyInviteLinks: true,
+              icon: td.ChatFolderIcon(name: "All"),
             ),
           ],
         ),

@@ -13,7 +13,7 @@ class SessionTileMapper {
       isCurrent: session.isCurrent,
       title: '${session.applicationName} ${session.applicationVersion}',
       subtitle:
-          '${session.deviceModel}, ${session.platform} ${session.systemVersion}, (${session.apiId}) \n${session.ip} - ${session.country}',
+          '${session.deviceModel}, ${session.platform} ${session.systemVersion}, (${session.apiId}) \n${session.ipAddress} - ${session.location}',
     );
   }
 }

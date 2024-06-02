@@ -18,10 +18,10 @@ abstract class IChatMessageRepository {
     required td.SearchMessagesFilter filter,
   });
 
-  Future<int> getMessagesCount({
-    required int chatId,
-    required td.SearchMessagesFilter filter,
-  });
+  Future<int> getMessagesCount(
+      {required int chatId,
+      required td.SearchMessagesFilter filter,
+      required int savedMessagesTopicId});
 
   Future<void> deleteMessages({
     required int chatId,

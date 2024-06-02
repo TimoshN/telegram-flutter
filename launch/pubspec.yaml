@@ -1,4 +1,4 @@
-name: launch
+name: telegram_flutter
 publish_to: "none"
 
 environment:
@@ -11,8 +11,8 @@ dependencies:
 
   app:
     path: ../app
-  showcase:
-    path: ../showcase
+  # showcase:
+  #   path: ../showcase
 
 dev_dependencies:
   dependency_validator: 3.2.0

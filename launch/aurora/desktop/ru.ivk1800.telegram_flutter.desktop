@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Telegram
+Comment=A new Flutter project.
+Icon=ru.ivk1800.telegram_flutter
+Exec=/usr/bin/ru.ivk1800.telegram_flutter
+X-Nemo-Application-Type=silica-qt5
+
+[X-Application]
+Permissions=Internet;UserDirs;Audio;DeviceInfo
+OrganizationName=ru.ivk1800
+ApplicationName=telegram_flutter

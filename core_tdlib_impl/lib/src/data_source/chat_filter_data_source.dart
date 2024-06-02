@@ -13,17 +13,17 @@ class ChatFilterDataSource {
 
   final IChatFiltersUpdatesProvider _chatFiltersUpdatesProvider;
 
-  final BehaviorSubject<List<td.ChatFilterInfo>> _chatFiltersSubject =
-      BehaviorSubject<List<td.ChatFilterInfo>>.seeded(<td.ChatFilterInfo>[]);
+  final BehaviorSubject<List<td.ChatFolderInfo>> _chatFiltersSubject =
+      BehaviorSubject<List<td.ChatFolderInfo>>.seeded(<td.ChatFolderInfo>[]);
 
-  StreamSubscription<List<td.ChatFilterInfo>>? _chatFiltersUpdatesSubscription;
+  StreamSubscription<List<td.ChatFolderInfo>>? _chatFiltersUpdatesSubscription;
 
-  Stream<List<td.ChatFilterInfo>> get chatFiltersStream => _chatFiltersSubject;
+  Stream<List<td.ChatFolderInfo>> get chatFiltersStream => _chatFiltersSubject;
 
   void _init() {
     _chatFiltersUpdatesSubscription = _chatFiltersUpdatesProvider
         .chatFiltersUpdates
-        .map((td.UpdateChatFilters event) => event.chatFilters)
+        .map((td.UpdateChatFolders event) => event.chatFolders)
         // todo do not emit if filters not changed,
         // todo in case if pin chat in custom folder, td lib emit update event,
         // todo but filters is same

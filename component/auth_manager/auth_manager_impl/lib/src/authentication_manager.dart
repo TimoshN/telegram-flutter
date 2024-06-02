@@ -35,6 +35,7 @@ class AuthenticationManager implements IAuthenticationManager {
         td.SetAuthenticationPhoneNumber(
           phoneNumber: phoneNumber,
           settings: const td.PhoneNumberAuthenticationSettings(
+            hasUnknownPhoneNumber: true,
             allowSmsRetrieverApi: false,
             allowMissedCall: false,
             authenticationTokens: <String>[],

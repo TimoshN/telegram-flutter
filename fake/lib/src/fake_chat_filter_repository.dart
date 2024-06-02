@@ -3,11 +3,11 @@ import 'package:td_api/td_api.dart' as td;
 
 class FakeChatFilterRepository implements IChatFilterRepository {
   const FakeChatFilterRepository({
-    this.chatFilters = const Stream<List<td.ChatFilterInfo>>.empty(),
+    this.chatFilters = const Stream<List<td.ChatFolderInfo>>.empty(),
   });
 
-  final Stream<List<td.ChatFilterInfo>> chatFilters;
+  final Stream<List<td.ChatFolderInfo>> chatFilters;
 
   @override
-  Stream<List<td.ChatFilterInfo>> get chatFiltersStream => chatFilters;
+  Stream<List<td.ChatFolderInfo>> get chatFiltersStream => chatFilters;
 }

@@ -21,13 +21,27 @@ class MessageReplyInfoMapper {
   final IMessagePreviewResolver _messagePreviewResolver;
 
   Future<ReplyInfo?> mapToReplyInfo(td.Message message) async {
-    if (message.replyInChatId == 0 || message.replyToMessageId == 0) {
+    if (message.replyTo == null) {
+      return null;
+    }
+
+    int chatId = 0;
+    int messageId = 0;
+
+    if (message.replyTo is td.MessageReplyToMessage) {
+      chatId = (message.replyTo as td.MessageReplyToMessage).chatId;
+      messageId = (message.replyTo as td.MessageReplyToMessage).messageId;
+    } else if (message.replyTo is td.MessageReplyToStory) {
+      return null;
+    }
+
+    if (chatId == 0 || messageId == 0) {
       return null;
     }
 
     final td.Message? replyMessage = await _messageRepository.getMessage(
-      chatId: message.replyInChatId,
-      messageId: message.replyToMessageId,
+      chatId: chatId,
+      messageId: messageId,
     );
 
     if (replyMessage == null) {
@@ -38,7 +52,7 @@ class MessageReplyInfoMapper {
         await _messagePreviewResolver.resolve(replyMessage);
 
     return ReplyInfo(
-      replyToMessageId: message.replyToMessageId,
+      replyToMessageId: messageId,
       title: preview.firstText.orEmpty(),
       subtitle: preview.secondText.orEmpty(),
     );

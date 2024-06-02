@@ -6,7 +6,12 @@ environment:
   flutter: ^3.0.0
 
 dependencies:
-  connectivity_plus: 2.2.1
+  connectivity_plus: ^5.0.2
+  connectivity_plus_aurora:
+    git:
+      url: https://gitlab.com/omprussia/flutter/flutter-plugins.git
+      ref: connectivity_plus_aurora-0.5.0
+      path: packages/connectivity_plus/connectivity_plus_aurora
   core_tdlib_api:
     path: ../core_tdlib_api
   flutter:

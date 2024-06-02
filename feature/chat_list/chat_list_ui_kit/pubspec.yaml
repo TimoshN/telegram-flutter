@@ -11,7 +11,7 @@ dependencies:
     path: ../../../feature/chat_list/chat_list_theme
   flutter:
     sdk: flutter
-  flutter_svg: 1.0.3
+  flutter_svg: ^1.1.6
   tg_theme:
     path: ../../../feature/theme/tg_theme
 

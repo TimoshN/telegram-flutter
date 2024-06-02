@@ -10,8 +10,18 @@ dependencies:
     path: ../../core
   core_tdlib_api:
     path: ../../core_tdlib_api
-  device_info_plus: 3.2.2
-  path_provider: 2.0.9
+  device_info_plus: ^9.0.3
+  device_info_plus_aurora:
+    git:
+      url: https://gitlab.com/omprussia/flutter/flutter-plugins.git
+      ref: device_info_plus_aurora-0.5.0
+      path: packages/device_info_plus/device_info_plus_aurora
+  path_provider: ^2.1.1
+  path_provider_aurora:
+    git:
+      url: https://gitlab.com/omprussia/flutter/flutter-plugins.git
+      ref: path_provider_aurora-0.5.0
+      path: packages/path_provider/path_provider_aurora
   rxdart: 0.27.3
   td_api:
     path: ../../td/td_api

@@ -82,6 +82,8 @@ class ChatMessageDataSource {
                 offset: '',
                 minDate: 0,
                 maxDate: 0,
+                //TODO: IMPLEMENT
+                onlyInChannels: false,
                 filter: filter,
                 limit: limit,
                 query: query,
@@ -107,15 +109,16 @@ class ChatMessageDataSource {
     return messages;
   }
 
-  Future<int> getMessagesCount({
-    required int chatId,
-    required td.SearchMessagesFilter filter,
-  }) =>
+  Future<int> getMessagesCount(
+          {required int chatId,
+          required td.SearchMessagesFilter filter,
+          required int savedMessagesTopicId}) =>
       _functionExecutor
           .send<td.Count>(
             td.GetChatMessageCount(
               chatId: chatId,
               filter: filter,
+              savedMessagesTopicId: savedMessagesTopicId,
               returnLocal: false,
             ),
           )

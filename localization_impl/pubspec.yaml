@@ -11,7 +11,7 @@ dependencies:
   localization_api:
     path: ../localization_api
   sprintf: 6.0.0
-  xml: 5.1.1
+  xml: ^6.3.0
 
 dev_dependencies:
   dependency_validator: 3.2.0

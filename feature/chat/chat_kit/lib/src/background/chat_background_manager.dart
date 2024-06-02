@@ -84,22 +84,20 @@ class ChatBackgroundManager {
       }).doOnData((td.Background background) {
         _activeBackgroundStorage.value = background.id;
       }).asyncMap((td.Background background) async {
-        return background.type.map(
-          wallpaper: (_) {
-            return Future<ChatBackground>.value(const ChatBackground.none());
-          },
-          pattern: (td.BackgroundTypePattern value) {
-            return _mapPatternToBackground(
-              background: background,
-              pattern: value,
-            );
-          },
-          fill: (td.BackgroundTypeFill value) {
-            return Future<ChatBackground>.value(
-              _mapFillToBackground(value.fill),
-            );
-          },
-        );
+        return background.type.map(wallpaper: (_) {
+          return Future<ChatBackground>.value(const ChatBackground.none());
+        }, pattern: (td.BackgroundTypePattern value) {
+          return _mapPatternToBackground(
+            background: background,
+            pattern: value,
+          );
+        }, fill: (td.BackgroundTypeFill value) {
+          return Future<ChatBackground>.value(
+            _mapFillToBackground(value.fill),
+          );
+        }, chatTheme: (td.BackgroundTypeChatTheme value) {
+          return Future<ChatBackground>.value(const ChatBackground.none());
+        });
       });
     }).listen(_backgroundSubject.add);
   }
